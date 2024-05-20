@@ -1,0 +1,183 @@
+@font-face {
+  font-family: 'Azeret';
+  src: url('Azeret_Mono/AzeretMono-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
+  font-family: 'Azeret';
+  background: linear-gradient(
+      45deg,
+      rgba(0, 255, 255, 0.523),
+      rgba(255, 0, 255, 0.523),
+      rgba(255, 255, 0, 0.523),
+      rgba(0, 0, 255, 0.523)
+    ), /* First layer: Gradient background */
+    url('https://raw.githubusercontent.com/Jaytechent/solana-json-files/main/metadataUpdate/photo_2024-03-17_12-43-47.jpg') center/cover fixed; /* Second layer: Background image */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+
+main {
+  max-width: 1100px;
+  margin: 10px auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
+}
+
+nav {
+  background-color: #333;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+nav a:hover {
+  background-color: aqua;
+  color: black;
+}
+
+section {
+  padding: 20px;
+  text-align: center;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+p {
+  color: black;
+  text-align: center;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 20px;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px black;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: cyan;
+}
+
+.services {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.servicebx {
+  border: 1px solid black;
+  height: 100px;
+  width: 200px;
+  padding: 10px;
+  box-shadow: 5px 5px 5px black;
+  transition: background-color 0.3s ease;
+}
+
+.servicebx:hover {
+  background: white;
+  cursor: pointer;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px black;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: rgb(169, 255, 255);
+  box-sizing: border-box;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+section {
+  margin-bottom: 30px;
+  padding: 20px; /* Added padding */
+}
+
+h2, b {
+  color: white;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  main {
+    padding: 10px;
+  }
+}
+
+#video-section {
+  position: relative;
+  width: 100%;
+  height: 20vh; /* Adjust the height as needed */
+  overflow: hidden;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 97%;
+  height: 50%;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
