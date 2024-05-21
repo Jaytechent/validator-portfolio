@@ -15,7 +15,7 @@ body {
       rgba(255, 255, 0, 0.523),
       rgba(0, 0, 255, 0.523)
     ), /* First layer: Gradient background */
-    url('https://raw.githubusercontent.com/Jaytechent/solana-json-files/main/metadataUpdate/photo_2024-03-17_12-43-47.jpg') center/cover fixed; /* Second layer: Background image */
+    url('https://raw.githubusercontent.com/Jaytechent/solana-json-fil') center/cover fixed; /* Second layer: Background image */
   margin: 0;
   padding: 0;
   line-height: 1.6;
