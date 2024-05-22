@@ -58,7 +58,8 @@ app.get("/contact", (req, res) => {
   res.render("contact");
 });
 app.get("/snapshot", (req, res) => {
-  res.render("snapshot");
+  const blockHeight = '237843'; // Replace with the actual block height
+  res.render("snapshot", { blockHeight });
 });
 
 // Handle form submission
