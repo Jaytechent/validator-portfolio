@@ -62,6 +62,12 @@ app.get("/snapshot", (req, res) => {
   res.render("snapshot", { blockHeight });
 });
 
+app.get("/snapshots", (req, res) => {
+  // Redirect the client to the snapshot file URL
+  res.redirect("http://geninfotech.xyz/snapshots/snapshot_height_237843.tar.lz4");
+});
+
+
 // Handle form submission
 app.post("/submit-contact", (req, res) => {
   const { name, email, message } = req.body;
