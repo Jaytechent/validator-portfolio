@@ -4,18 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Snapshot</title>
+  <link rel="icon" href="/gmcads.png" type="image/x-icon">
   <link rel="stylesheet" href="/styles.css">
 </head>
-
-<nav>
+<body>
+  <nav>
     <a href="/">Home</a>
     <a href="/services">Our Services</a>
     <a href="/contact">Contact Us</a>
     <a href="/snapshot">Snapshot</a>
   </nav>
-<body>
+
   <header>
-    <h1>Snapshot Coming Soon</h1>
+    <h1>Snapshot of Current Nodes</h1>
     <p>A snapshot of our latest developments will be available here shortly. Stay tuned!</p>
   </header>
 
@@ -24,10 +25,55 @@
       <h2>Latest Updates</h2>
       <p>Check back later for updates on our progress.</p>
     </section>
+    <section>
+      <a href="#initia-node-section" class="cta-button">INITIA TESTNET NODE</a>
+    </section>
 
     <section>
       <h2>What to Expect</h2>
       <p>Our snapshot will include details on our latest projects and guide on how to run their Node, achievements, and upcoming events. Don't miss it!</p>
+    </section>
+
+    <section id="initia-node-section"> <!-- Added ID for the section -->
+      <h2>Geninfotech Initia Testnet Snapshot Server Setup</h2>
+     
+The snapshot is designed for node opeartors to run an efficient node on Initia chain. To make the snapshot as small as possible while still viable as a validator, we use the following setting to save on the disk space. It might be helpful for you to sync with our snapshot periodically because Tendermint chain storage grows over time regardless of the pruning. Since we periodically state-sync our snapshot nodes, you might notice that sometimes the size of our snapshot is surprisingly small and its streamed straight into your db to save space and easier set up.
+We take node snapshot periodically on a daily basis for testnet .
+    <section>
+      <h2>Stop Your Node</h2>
+      <p>Stop your node by running the following command:</p>
+      <pre><code>sudo service initia stop</code></pre>
+      <p>Reset your node to erase the node database. Make sure to back up your <code>priv_validator_key.json</code> before resetting.</p>
+      <p><strong>WARNING:</strong> If you're using the snapshot on a validator node during a chain halt, ensure you back up <code>priv_validator_state.json</code> and replace it after the snapshot is extracted but before starting the node process.</p>
+       Back up priv_validator_state.json if needed
+       <pre><code>cp ~/.initia/data/priv_validator_state.json  ~/.initia/priv_validator_state.json </code></pre>
+       Reset your node. This will erase your node database
+       <pre><code><h3># On some tendermint chains  </h3>
+initiad unsafe-reset-all
+
+<h3># On other tendermint chains</h3>
+initiad tendermint unsafe-reset-all --home $HOME/.initia --keep-addr-book</code></pre>
+
+
+Stream and Decompress the snapshot to your database location. You database location will be
+ something to the effect of ~/.initia depending on your node implemention. 
+
+ <pre><code>curl -o - -L http://geninfotech.xyz/snapshots/snapshot_height_237843.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.initia </code></pre>
+
+
+Replace with the backed-up priv_validator_state.json
+
+<pre><code>cp ~/.initia/priv_validator_state.json  ~/.initia/data/priv_validator_state.json </code></pre>
+
+
+
+ Restart your node
+ <pre><code>sudo service initia start</code></pre>
+
+ Make sure that your node is running
+
+<pre><code>sudo service initia status</code></pre>
+<pre><code>sudo journalctl -u initia -f</code></pre>
     </section>
   </main>
 

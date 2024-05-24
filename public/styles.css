@@ -181,3 +181,31 @@ h2, b {
   height: 100%;
   object-fit: cover;
 }
+/* Cream background for code blocks */
+pre {
+  background-color: #fff8dc; /* Cream color */
+  padding: 10px; /* Adjust padding as needed */
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Cream background for inline code */
+code {
+  background-color: #fff8dc; /* Cream color */
+  padding: 3px 5px; /* Adjust padding as needed */
+  border-radius: 3px; /* Rounded corners */
+}
+
+/* Adjustments for the code block */
+pre code {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+/* Ensure code blocks are scrollable on small screens */
+@media (max-width: 600px) {
+  pre {
+    overflow-x: auto;
+  }
+}
