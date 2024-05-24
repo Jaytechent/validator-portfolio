@@ -40,7 +40,7 @@
 The snapshot is designed for node opeartors to run an efficient node on Initia chain. To make the snapshot as small as possible while still viable as a validator, we use the following setting to save on the disk space. It might be helpful for you to sync with our snapshot periodically because Tendermint chain storage grows over time regardless of the pruning. Since we periodically state-sync our snapshot nodes, you might notice that sometimes the size of our snapshot is surprisingly small and its streamed straight into your db to save space and easier set up.
 We take node snapshot periodically on a daily basis for testnet .
     <section>
-      <h2>Stop Your Node</h2>
+      <h2>Initia Testnet Node Guide</h2>
       <p>Stop your node by running the following command:</p>
       <pre><code>sudo service initia stop</code></pre>
       <p>Reset your node to erase the node database. Make sure to back up your <code>priv_validator_key.json</code> before resetting.</p>
