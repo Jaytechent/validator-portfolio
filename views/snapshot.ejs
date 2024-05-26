@@ -40,12 +40,11 @@
 The snapshot is designed for node opeartors to run an efficient node on Initia chain. To make the snapshot as small as possible while still viable as a validator, we use the following setting to save on the disk space. It might be helpful for you to sync with our snapshot periodically because Tendermint chain storage grows over time regardless of the pruning. Since we periodically state-sync our snapshot nodes, you might notice that sometimes the size of our snapshot is surprisingly small and its streamed straight into your db to save space and easier set up.
 We take node snapshot periodically on a daily basis for testnet .
     <section>
-      <h2>Initia Testnet Node Guide</h2>
+      <h2>Initia Testnet Node Snapshot Guide</h2>
       <p>Stop your node by running the following command:</p>
       <pre><code>sudo service initia stop</code></pre>
-      <p>Reset your node to erase the node database. Make sure to back up your <code>priv_validator_key.json</code> before resetting.</p>
-      <p><strong>WARNING:</strong> If you're using the snapshot on a validator node during a chain halt, ensure you back up <code>priv_validator_state.json</code> and replace it after the snapshot is extracted but before starting the node process.</p>
-       Back up priv_validator_state.json if needed
+       If you're using the snapshot on a validator node during a chain halt, ensure you back up <h5>priv_validator_state.json</h5></p>
+       #Back up priv_validator_state.json if needed
        <pre><code>cp ~/.initia/data/priv_validator_state.json  ~/.initia/priv_validator_state.json </code></pre>
        Reset your node. This will erase your node database
        <pre><code><h3># On some tendermint chains  </h3>
@@ -61,7 +60,7 @@ Stream and Decompress the snapshot to your database location. You database locat
  <pre><code>curl -o - -L http://geninfotech.xyz/snapshots/snapshot_height_237843.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.initia </code></pre>
 
 
-Replace with the backed-up priv_validator_state.json
+Replace the backed-up priv_validator_state.json
 
 <pre><code>cp ~/.initia/priv_validator_state.json  ~/.initia/data/priv_validator_state.json </code></pre>
 
